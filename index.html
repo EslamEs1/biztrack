@@ -1,0 +1,1341 @@
+<!DOCTYPE html>
+<html lang="ar">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <!-- Favicon -->
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+
+
+    <!-- Title -->
+    <title>تتبع الأعمال | بيز تراك</title>
+</head>
+
+<body dir="rtl">
+    <nav class="navbar navbar-main navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="تبديل التنقل">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <!-- Dropdown for ملف -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            ملف
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#"> تغيير المستخدم</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="#" data-bs-toggle="modal"
+                                    data-bs-target="#changeUser">المرفقات</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="#" data-bs-toggle="modal"
+                                    data-bs-target="#changePassword">تغيير كلمة المرور</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="#">الخروج من البرنامج</a></li>
+                        </ul>
+                    </li>
+
+                    <!-- Dropdown for الإعدادات -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            إعدادات البرنامج
+                        </a>
+                        <ul class="dropdown-menu">
+                            <!-- إعدادات عامة -->
+                            <li><a class="dropdown-item" href="#" data-bs-toggle="modal"
+                                    data-bs-target="#companySettings">إعدادات بيانات الشركة</a></li>
+                            <li><a class="dropdown-item" href="#" data-bs-toggle="modal"
+                                    data-bs-target="#pointsOfsale">إعداد نقاط البيع</a></li>
+                            <li><a class="dropdown-item" href="#" data-bs-toggle="modal"
+                                    data-bs-target="#pricingType">إعدادات أنواع التسعير</a></li>
+                            <li><a class="dropdown-item" href="#" data-bs-toggle="modal"
+                                    data-bs-target="#qrcodesetting">إعدادات طابعة الباركود</a></li>
+                            <li><a class="dropdown-item" href="#" data-bs-toggle="modal"
+                                    data-bs-target="#filesizeModal">إعدادات المرفقات والصور</a></li>
+                            <li><a class="dropdown-item" href="#" data-bs-toggle="modal"
+                                    data-bs-target="#sortSettingsModal">إعدادات ترتيب العناصر</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+
+                            <!-- إعدادات المخازن -->
+                            <li><a class="dropdown-item" href="#" data-bs-toggle="modal"
+                                    data-bs-target="#tradingModal">إعدادات حسابات المتاجرة</a></li>
+                            <li><a class="dropdown-item" href="#" data-bs-toggle="modal"
+                                    data-bs-target="#additionalDataModal">إعدادات بيانات إضافية لفاتورة البيع</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+
+                            <!-- إعدادات الكاشير -->
+                            <li><a class="dropdown-item" href="#">إعدادات ميزان الباركود</a></li>
+                            <li><a class="dropdown-item" href="#">إعدادات طابعة الكاشير</a></li>
+                            <li><a class="dropdown-item" href="#">إعدادات فاتورة الكاشير</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+
+                            <!-- إعدادات التقارير -->
+                            <li><a class="dropdown-item" href="#">إعدادات تقرير فاتورة البيع</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+
+                            <!-- إعدادات المستخدم -->
+                            <li><a class="dropdown-item" href="#">إعدادات واجهة المستخدم</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+
+                            <!-- استيراد قاعدة بيانات -->
+                            <li><a class="dropdown-item" href="#">استيراد قاعدة بيانات من MS Excel</a></li>
+                        </ul>
+                    </li>
+
+
+                    <!-- Dropdown for الأصناف -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            الأصناف
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">تعريف الأصناف</a></li>
+                            <li><a class="dropdown-item" href="#">تعريف الخدمات</a></li>
+                            <li><a class="dropdown-item" href="#">الوحدات القياسة</a></li>
+                            <li><a class="dropdown-item" href="#">قوالب بيع الأصناف</a></li>
+                            <li><a class="dropdown-item" href="#">تعديل أسعار</a></li>
+                        </ul>
+                    </li>
+
+                    <!-- Dropdown for المخازن -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            المخازن
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">تعريف المخازن</a></li>
+                            <li><a class="dropdown-item" href="#">إذن استلام أصناف</a></li>
+                            <li><a class="dropdown-item" href="#">إذن التحويل بين المخازن</a></li>
+                            <li><a class="dropdown-item" href="#">جرد مخزني</a></li>
+                            <li><a class="dropdown-item" href="#">إعادة تقييم سعر وصلاحية المخزون</a></li>
+                        </ul>
+                    </li>
+
+                    <!-- Dropdown for المشتريات -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            المشتريات
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">تعريف مورد</a></li>
+                            <li><a class="dropdown-item" href="#">مجموعات الموردين</a></li>
+                            <li><a class="dropdown-item" href="#">أمر شراء أصناف</a></li>
+                            <li><a class="dropdown-item" href="#">فاتورة شراء أصناف</a></li>
+                            <li><a class="dropdown-item" href="#">مرتجع شراء أصناف</a></li>
+                            <li><a class="dropdown-item" href="#">فاتورة شراء خدمات</a></li>
+                            <li><a class="dropdown-item" href="#">مرتجع شراء خدمات</a></li>
+                        </ul>
+                    </li>
+
+                    <!-- Dropdown for المبيعات -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            المبيعات
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">تعريف عميل</a></li>
+                            <li><a class="dropdown-item" href="#">مجموعات العملاء</a></li>
+                            <li><a class="dropdown-item" href="#">مندوبين البيع</a></li>
+                            <li><a class="dropdown-item" href="#">عرض أسعار أصناف</a></li>
+                            <li><a class="dropdown-item" href="#">أمر البيع</a></li>
+                            <li><a class="dropdown-item" href="#">أمر بيع خدمات</a></li>
+                            <li><a class="dropdown-item" href="#">فاتورة بيع خدمات</a></li>
+                            <li><a class="dropdown-item" href="#">مرتجع بيع خدمات</a></li>
+                            <li><a class="dropdown-item" href="#">شاشة الاستعلام عن السعر</a></li>
+                        </ul>
+                    </li>
+
+                    <!-- Dropdown for الحسابات -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            الحسابات
+                        </a>
+                        <ul class="dropdown-menu">
+                            <!-- تعريف الحسابات -->
+                            <li><a class="dropdown-item" href="#">تعريف السنة المالية</a></li>
+                            <!-- تعريف الحسابات مع Dropdown فرعي -->
+                            <li class="dropdown-submenu">
+                                <a class="dropdown-item dropdown-toggle" href="#">تعريف الحسابات</a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="#">حسابات عامة</a></li>
+                                    <li><a class="dropdown-item" href="#">حسابات محدودات</a></li>
+                                    <li><a class="dropdown-item" href="#">حسابات بنكية</a></li>
+                                    <li><a class="dropdown-item" href="#">حسابات خزائن</a></li>
+                                </ul>
+                            </li>
+                            <li><a class="dropdown-item" href="#">الأرصدة الافتتاحية</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+
+                            <!-- الأصول الثابتة -->
+                            <li><a class="dropdown-item" href="#">تعريف الأصول الثابتة</a></li>
+                            <li><a class="dropdown-item" href="#">إهلاك الأصول الثابتة</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+
+                            <!-- مراكز التكلفة -->
+                            <li><a class="dropdown-item" href="#">تعريف مراكز التكلفة</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+
+                            <!-- النقدية -->
+                            <li><a class="dropdown-item" href="#">استلام النقدية</a></li>
+                            <li><a class="dropdown-item" href="#">صرف النقدية</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+
+                            <!-- القيود -->
+                            <li><a class="dropdown-item" href="#">القيود اليدوية</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+
+                            <!-- الأوراق المالية -->
+                            <li><a class="dropdown-item" href="#">تسجيل أوراق القبض</a></li>
+                            <li><a class="dropdown-item" href="#">تسديد أوراق القبض</a></li>
+                            <li><a class="dropdown-item" href="#">تسجيل شيكات أوراق الدفع</a></li>
+                            <li><a class="dropdown-item" href="#">تسديد أوراق الدفع</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+
+                            <!-- دفعة الحجز -->
+                            <li><a class="dropdown-item" href="#">دفعة الحجز</a></li>
+                        </ul>
+                    </li>
+
+                    <!-- Dropdown for التصنيع -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            التصنيع
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">تعريف منتج التصنيع أو المنتج النهائي</a></li>
+                            <li><a class="dropdown-item" href="#">تعريف المادة الخام</a></li>
+                            <li><a class="dropdown-item" href="#">عمل إذن استلام الكميات للمخازن</a></li>
+                            <li><a class="dropdown-item" href="#">معدلات الإنتاج</a></li>
+                            <li><a class="dropdown-item" href="#">أمر التصنيع</a></li>
+                        </ul>
+                    </li>
+
+                    <!-- Dropdown for التقارير -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            التقارير
+                        </a>
+                        <ul class="dropdown-menu">
+                            <!-- تقارير الاصناف -->
+                            <li class="dropdown-submenu">
+                                <a class="dropdown-item dropdown-toggle" href="#">تقارير الاصناف</a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="#">كشف حصر الاصناف</a></li>
+                                    <li><a class="dropdown-item" href="#">طباعة باركود اصناف A4</a></li>
+                                    <li><a class="dropdown-item" href="#">تقرير قائمة اسعار</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <!-- تقارير المخازن -->
+                            <li class="dropdown-submenu">
+                                <a class="dropdown-item dropdown-toggle" href="#">تقارير المخازن</a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="#">تقرير مخازن عام</a></li>
+                                    <li><a class="dropdown-item" href="#">تقرير مخازن تفصيلي</a></li>
+                                    <li><a class="dropdown-item" href="#">تقرير قيمة المخاذن</a></li>
+                                    <li><a class="dropdown-item" href="#">تقرير حركة أصناف عام</a></li>
+                                    <li><a class="dropdown-item" href="#">تقرير حركة اصناف تفصيلي</a></li>
+                                    <li><a class="dropdown-item" href="#">تقرير حركة اصناف بالقيمة الشرائية والبيعية</a>
+                                    </li>
+                                    <li><a class="dropdown-item" href="#">تقرير إذن استلام</a></li>
+                                    <li><a class="dropdown-item" href="#">تقرير إذن صرف بضاعة</a></li>
+                                    <li><a class="dropdown-item" href="#">تقرير إذن التحويل بين المخازن</a></li>
+                                    <li><a class="dropdown-item" href="#">تقرير الطلبيات (المطلوب شرائها)</a></li>
+                                    <li><a class="dropdown-item" href="#">طباعة باركود إذون الاستلام</a></li>
+                                    <li><a class="dropdown-item" href="#">جرد مخزني</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <!-- تقارير المشتريات -->
+                            <li class="dropdown-submenu">
+                                <a class="dropdown-item dropdown-toggle" href="#">تقارير المشتريات</a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="#">كشف حصر الموردين</a></li>
+                                    <li><a class="dropdown-item" href="#">أمر شراء</a></li>
+                                    <li><a class="dropdown-item" href="#">فاتورة شراء أصناف</a></li>
+                                    <li><a class="dropdown-item" href="#">تقرير مرتجع مشتريات أصناف</a></li>
+                                    <li><a class="dropdown-item" href="#">تقرير مرتجع شراء خدمات</a></li>
+                                    <li><a class="dropdown-item" href="#">تقرير مشتريات أصناف</a></li>
+                                    <li><a class="dropdown-item" href="#">تقرير فاتورة شراء خدمات</a></li>
+                                    <li><a class="dropdown-item" href="#">تقرير مشتريات خدمات</a></li>
+                                    <li><a class="dropdown-item" href="#">تقرير حركة الموردين على الاصناف تفصيلي</a>
+                                    </li>
+                                    <li><a class="dropdown-item" href="#">تقرير حصر فواتير الشراء</a></li>
+                                    <li><a class="dropdown-item" href="#">تقرير حصر مرتجع فواتير الشراء</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <!-- تقارير المبيعات -->
+                            <li class="dropdown-submenu">
+                                <a class="dropdown-item dropdown-toggle" href="#">تقارير المبيعات</a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="#">كشف حصر العملاء</a></li>
+                                    <li><a class="dropdown-item" href="#">عرض أسعار أصناف</a></li>
+                                    <li><a class="dropdown-item" href="#">أمر بيع أصناف</a></li>
+                                    <li><a class="dropdown-item" href="#">تقرير فاتورة بيع أصناف</a></li>
+                                    <li><a class="dropdown-item" href="#">تقرير مرتجع بيع أصناف</a></li>
+                                    <li><a class="dropdown-item" href="#">تقرير مبيعات أصناف</a></li>
+                                    <li><a class="dropdown-item" href="#">تقرير عائد فواتير بيع أصناف</a></li>
+                                    <li><a class="dropdown-item" href="#">تقرير حركة عملاء على الاصناف</a></li>
+                                    <li><a class="dropdown-item" href="#">تقرير حركة عملاء على الخدمات</a></li>
+                                    <li><a class="dropdown-item" href="#">تقرير فاتورة بيع خدمات</a></li>
+                                    <li><a class="dropdown-item" href="#">تقرير مرتجع فاتورة بيع خدمات</a></li>
+                                    <li><a class="dropdown-item" href="#">تقرير مبيعات خدمات</a></li>
+                                    <li><a class="dropdown-item" href="#">تقرير نشاط مندوبين البيع</a></li>
+                                    <li><a class="dropdown-item" href="#">طباعة فاتورة الكاشير</a></li>
+                                    <li><a class="dropdown-item" href="#">تقرير حصر فواتير المبيعات</a></li>
+                                    <li><a class="dropdown-item" href="#">تقرير حصر مرتجع فواتير المبيعات</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <!-- تقارير الحسابات -->
+                            <li class="dropdown-submenu">
+                                <a class="dropdown-item dropdown-toggle" href="#">تقارير الحسابات</a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="#">بيانات الحسابات</a></li>
+                                    <li><a class="dropdown-item" href="#">كشف حساب فردى نموذج أ</a></li>
+                                    <li><a class="dropdown-item" href="#">كشف حساب فردى نموذج ب</a></li>
+                                    <li><a class="dropdown-item" href="#">كشف حساب فردى نموذج ج</a></li>
+                                    <li><a class="dropdown-item" href="#">كشف حساب مجمع</a></li>
+                                    <li><a class="dropdown-item" href="#">تحليل أعمار ديون العملاء</a></li>
+                                    <li><a class="dropdown-item" href="#">ميزان المراجعة</a></li>
+                                    <li><a class="dropdown-item" href="#">القيود اليدوية والنظامية</a></li>
+                                    <li><a class="dropdown-item" href="#">دفعات الحجز</a></li>
+                                    <li><a class="dropdown-item" href="#">أوراق القبض</a></li>
+                                    <li><a class="dropdown-item" href="#">أوراق الدفع</a></li>
+                                    <li><a class="dropdown-item" href="#">حساب المتاجرة</a></li>
+                                    <li><a class="dropdown-item" href="#">إيرادات ومصروفات</a></li>
+                                    <li><a class="dropdown-item" href="#">الميزانية العمومية</a></li>
+                                    <li><a class="dropdown-item" href="#">إيصال استلام نقدية</a></li>
+                                    <li><a class="dropdown-item" href="#">إيصال صرف نقدية</a></li>
+                                    <li><a class="dropdown-item" href="#">مدفوعات العملاء</a></li>
+                                    <li><a class="dropdown-item" href="#">حصر إذون صرف النقدية</a></li>
+                                    <li><a class="dropdown-item" href="#">حصر إذون استلام النقدية</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <!-- تقارير التصنيع -->
+                            <li class="dropdown-submenu">
+                                <a class="dropdown-item dropdown-toggle" href="#">تقارير التصنيع</a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="#">تقرير معادلات التصنيع</a></li>
+                                    <li><a class="dropdown-item" href="#">تقرير أمر التصنيع</a></li>
+                                    <li><a class="dropdown-item" href="#">تقرير مراجعة الإدارة</a></li>
+                                    <li><a class="dropdown-item" href="#">تقرير إشعارات البريد الإلكتروني</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+
+
+                    <!-- Dropdown for دعم اتخاذ القرار -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            دعم اتخاذ القرار
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">تقرير القرار</a></li>
+                            <li><a class="dropdown-item" href="#">تحليل البيانات</a></li>
+                        </ul>
+                    </li>
+
+                    <!-- Dropdown for الإشعارات -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            الإشعارات
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">عرض الإشعارات</a></li>
+                            <li><a class="dropdown-item" href="#">إعدادات الإشعارات</a></li>
+                        </ul>
+                    </li>
+
+                    <!-- Dropdown for إدارة البرنامج -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            إدارة البرنامج
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">إعدادات البرنامج</a></li>
+                            <li><a class="dropdown-item" href="#">إدارة الأذونات</a></li>
+                        </ul>
+                    </li>
+
+                    <!-- Dropdown for مساعدة -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            مساعدة
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">دليل المستخدم</a></li>
+                            <li><a class="dropdown-item" href="#">التواصل مع الدعم</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <nav class="navbar navbar-second navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+                aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav">
+                    <a class="nav-link active" aria-current="page" href="#">
+                        <img src="img/icons/icons8-category-96.webp" alt="category">
+                        <span>الأصناف</span>
+                    </a>
+                    <a class="nav-link active" aria-current="page" href="#">
+                        <img src="img/icons/icons8-supplier-96.webp" alt="category">
+                        <span>الموردين</span>
+                    </a>
+                    <a class="nav-link active" aria-current="page" href="#">
+                        <img src="img/icons/icons8-users-96.webp" alt="category">
+                        <span>العملاء</span>
+                    </a>
+                    <a class="nav-link active" aria-current="page" href="#">
+                        <img src="img/icons/icons8-hangar-96.webp" alt="category">
+                        <span>المخازن</span>
+                    </a>
+                    <a class="nav-link active" aria-current="page" href="#">
+                        <img src="img/icons/icons8-envelope-96.webp" alt="category">
+                        <span>إذن استلام</span>
+                    </a>
+                    <a class="nav-link active" aria-current="page" href="#">
+                        <img src="img/icons/icons8-invoice-96.webp" alt="category">
+                        <span>فاتورة الشراء</span>
+                    </a>
+
+                    <a class="nav-link active" aria-current="page" href="#">
+                        <img src="img/icons/icons8-money-transfer-96.webp" alt="category">
+                        <span>فاتورة البيع</span>
+                    </a>
+
+                    <a class="nav-link active" aria-current="page" href="#">
+                        <img src="img/icons/icons8-data-transfer-96.webp" alt="category">
+                        <span>تحويلات</span>
+                    </a>
+
+                    <a class="nav-link active" aria-current="page" href="#">
+                        <img src="img/icons/icons8-online-money-transfer-96.webp" alt="category">
+                        <span>الشيكات</span>
+                    </a>
+
+                    <a class="nav-link active" aria-current="page" href="#">
+                        <img src="img/icons/icons8-no-access-96.webp" alt="category">
+                        <span>القيود</span>
+                    </a>
+
+                    <a class="nav-link active" aria-current="page" href="#">
+                        <img src="img/icons/icons8-balance-96.webp" alt="category">
+                        <span>ميزان المراجعة</span>
+                    </a>
+
+                    <a class="nav-link active" aria-current="page" href="#">
+                        <img src="img/icons/icons8-reports-96.webp" alt="category">
+                        <span>التقارير</span>
+                    </a>
+
+                    <a class="nav-link active" aria-current="page" href="#">
+                        <img src="img/icons/icons8-account-96.webp" alt="category">
+                        <span>إحصائيات</span>
+                    </a>
+
+                    <a class="nav-link active" aria-current="page" href="#">
+                        <img src="img/icons/icons8-help-96.webp" alt="category">
+                        <span>مساعدة</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+
+
+    <!-- the modals  -->
+    <!-- ChangeUser -->
+    <div class="modal fade" id="changeUser" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="staticBackdropLabel">المرفقات</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="mb-3">
+                            <input type="number" class="form-control" placeholder="ادخل كود المرفق">
+                        </div>
+                        <div class="mb-3">
+                            <input type="text" class="form-control" placeholder="ادخل اسم المرفق">
+                        </div>
+                        <div class="mb-3">
+                            <input type="file" class="form-control">
+                            <div id="emailHelp" class="form-text">اختر مصدر المرفق</div>
+                        </div>
+                        <div class="mb-3">
+                            <textarea name="text" class="form-control" rows="4"
+                                placeholder="ادخل وصف المرفق"></textarea>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary">رفع المرفق</button>
+                    <button type="button" class="btn btn-primary">انشاء جديد</button>
+                    <button type="button" class="btn btn-primary">حفظ بأسم</button>
+                    <button type="button" class="btn btn-primary">حذف</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ChangePassword -->
+    <div class="modal fade" id="changePassword" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="staticBackdropLabel">تغيير كلمة المرور </h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="mb-3">
+                            <input type="password" class="form-control" placeholder="ادخل كلمة المرور القديمة">
+                        </div>
+                        <div class="mb-3">
+                            <input type="password" class="form-control" placeholder="ادخل كلمة المرور الجديدة">
+                        </div>
+                        <div class="mb-3">
+                            <input type="password" class="form-control" placeholder="تاكيد كلمة المرور الجديدة">
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary">تغيير كلمة المرور</button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- اعدادات الشركة -->
+    <div class="modal fade" id="companySettings" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="staticBackdropLabel">بيانات الشركة</h1>
+                    <a href="#" data-bs-toggle="modal" data-bs-target="#helpCompanySettings"><img
+                            src="img/icons/icons8-help-96.webp" alt="help"></a>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="mb-3">
+                            <input type="text" class="form-control" placeholder="إسم الشركة">
+                        </div>
+                        <div class="mb-3">
+                            <input type="text" class="form-control" placeholder="العنوان">
+                        </div>
+                        <div class="mb-3">
+                            <input type="text" class="form-control" placeholder="الدولة : مصر , السعوديه">
+                        </div>
+                        <div class="mb-3">
+                            <input type="text" class="form-control" placeholder="التلفون : 201158268124+">
+                        </div>
+                        <div class="mb-3">
+                            <input type="text" class="form-control" placeholder="الفاكس : 20 88 259 5478+">
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col-md-6">
+                                <input type="text" class="form-control" placeholder="العملة">
+                                <div id="emailHelp" class="form-text">مثال : جنية , ريال</div>
+                            </div>
+                            <div class="col-md-6">
+                                <input type="text" class="form-control" placeholder="العملة الصغرى">
+                                <div id="emailHelp" class="form-text">مثال : قرش , هلله</div>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <textarea name="text" class="form-control" rows="2" placeholder="سياسة الضمان"></textarea>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col-md-6">
+                                <input type="number" class="form-control" placeholder="رقم التسجيل الضريبي">
+                            </div>
+                            <div class="col-md-6">
+                                <input type="number" class="form-control" placeholder="رقم السجل التجارى">
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <input type="text" class="form-control" placeholder="ر. ت: ضريبة القيمة المضافة">
+                        </div>
+                        <div class="form-check">
+                            <div id="emailHelp" class="form-text">طبعة الكاشير</div>
+                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                            <label class="form-check-label" for="flexRadioDefault1">
+                                POS
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2"
+                                checked>
+                            <label class="form-check-label" for="flexRadioDefault2">
+                                A4
+                            </label>
+                        </div>
+
+                        <!-- شعار الشركة -->
+                        <div class="mb-3">
+                            <input type="file" class="form-control" placeholder="شعار الشركة">
+                            <div id="emailHelp" class="form-text">شعار الشركة</div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary">حفظ</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="helpCompanySettings" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        aria-labelledby="helpExampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="helpExampleModalLabel">إعدادات بيانات الشركة </h1>
+                    <button type="button" class="btn-close" data-bs-toggle="modal"
+                        data-bs-target="#companySettings"></button>
+                </div>
+                <div class="modal-body">
+                    يمكنك من خلال هذه الشاشة إضافة بيانات الشركة حيث يمكنك اضافة اسم الشركة ، العنوان ، ورقم التليفون ،
+                    والفاكس ، بالاضافة الى تحديد العملة التى يتم التعامل بها كما يمكنك تحديد نوع الطابعة المستخدمة اذا
+                    كانت طابعة A4 أو طابعة الكاشير POS . وبالاضافة الى ذلك يمكنك إضافة شعار شركتك . وكل هذه البيانات
+                    ستظهر فى كل التقارير الصادرة من البرنامج من تقارير المبيعات والمخازن والمشريات ... الخ . وبعد إدخال
+                    هذه البيانات قم بالضغط على زر حفظ .
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- اعدادات نقاط البيع -->
+    <div class="modal fade" id="pointsOfsale" data-bs-backdrop="static" tabindex="-1"
+        aria-labelledby="settingsFormLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="settingsFormLabel">إعدادات نقاط البيع</h1>
+                    <a href="#" data-bs-toggle="modal" data-bs-target="#helppointsOfsale"><img
+                            src="img/icons/icons8-help-96.webp" alt="help"></a>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="mb-3">
+                            <select id="defaultCashier" class="form-select">
+                                <option selected disabled>خزينة البيع / إستلام النقدية الافتراضيه</option>
+                                <option value="1"> الفرع الأول</option>
+                                <option value="2">خزينة الفرع الثاني</option>
+                                <option value="3">خزينة الإدارة</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <select id="defaultStore" class="form-select">
+                                <option selected disabled>خزينة الشراء / صرف النقدية الافتراضية</option>
+                                <option value="1">مخزن البضائع</option>
+                                <option value="2">مخزن المواد الخام</option>
+                                <option value="3">مخزن الأدوات</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <select id="defaultCostCenter" class="form-select">
+                                <option selected disabled>المخزن الافتراضى</option>
+                                <option value="1">التسويق</option>
+                                <option value="2">الإنتاج</option>
+                                <option value="3">الخدمات</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <select id="branchName" class="form-select">
+                                <option selected disabled>مركز التكلفة الافتراضى</option>
+                                <option value="1">فرع الرياض</option>
+                                <option value="2">فرع جدة</option>
+                                <option value="3">فرع الدمام</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <select id="branchName" class="form-select">
+                                <option selected disabled>التسعير الافتراضى</option>
+                                <option value="1">فرع الرياض</option>
+                                <option value="2">فرع جدة</option>
+                                <option value="3">فرع الدمام</option>
+                            </select>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary">حفظ</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="helppointsOfsale" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        aria-labelledby="helpExampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="helpExampleModalLabel">اعداد نقاط البيع</h1>
+                    <button type="button" class="btn-close" data-bs-toggle="modal"
+                        data-bs-target="#pointsOfsale"></button>
+                </div>
+                <div class="modal-body">
+                    يمكنك من خلال هذه الشاشة ظبط اعدادات نقاط البيع الافتراضية الخاصة بالمنشأة حيث يتيح لك برنامج الافضل
+                    المحاسبى تعددية الخزائن ومراكز التكلفة والمخازن وهى هامة جداً في حالة المنشأة التجارية التى لديها
+                    أكثر من فرع واكثر من نشاط ولذلك عليك قبل ان اجراء الحركات المحاسبية من على النظام مثل فواتير البيع
+                    والشراء والمصروفات ان تحدد أولاً خزينة المبيعات الافتراضية ثم خزينة المشتريات الافتراضية والمخزن
+                    الافتراضى التى ستتم منه المبيعات بالاضافة الى مركز التكلفة الافتراضى أو اسم الفرع .
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- اعدادات  انواع التسعير -->
+    <div class="modal fade" id="pricingType" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="staticBackdropLabel">إعدادات أنواع التسعير</h1>
+                    <a href="#" data-bs-toggle="modal" data-bs-target="#helpricingType"><img
+                            src="img/icons/icons8-help-96.webp" alt="help"></a>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="mb-3">
+                            <input type="text" class="form-control" placeholder="التسعير الاول">
+                        </div>
+                        <div class="mb-3">
+                            <input type="text" class="form-control" placeholder="التسعير الثانى">
+                        </div>
+                        <div class="mb-3">
+                            <input type="text" class="form-control" placeholder="التسعير الثالث">
+                        </div>
+                        <div class="mb-3">
+                            <select id="defaultCashier" class="form-select">
+                                <option selected disabled>أسعار اخرى</option>
+                                <option value="1"> الفرع الأول</option>
+                                <option value="2">خزينة الفرع الثاني</option>
+                                <option value="3">خزينة الإدارة</option>
+                            </select>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary">حفظ</button>
+                    <button type="button" class="btn btn-secondary" data-bs-toggle="modal"
+                        data-bs-target="#pricingTypeelse">إضافة تسعير اخرى</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="helpricingType" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        aria-labelledby="helpExampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="helpExampleModalLabel">إعدادات أنواع التسعير</h1>
+                    <button type="button" class="btn-close" data-bs-toggle="modal"
+                        data-bs-target="#pricingType"></button>
+                </div>
+                <div class="modal-body">
+                    يمكنك فى برنامج الأفضل تحديد نمط التسعير الخاص بالشركة أو المنشأة حيث يمكنك تعريف خطط التسعير " جملة
+                    ، نصف جملة ، تجزئة " أو فى حالة بيع ملابس مثلاً يمكنك تحديدها مثلاً " M , L , Xl " أو فى الأصناف ذات
+                    الاحجام المختلفة كالسندوتشات والوجبات فى المطاعم يمكنك تحديدها كالتالى " Small , Medium , Combo "
+                    وهكذا ... ، بالاضافة انه يمكنك اضافة اى خطط تسعير أخرى الى البرنامج ويمكنك استدعائها بسهولة من
+                    فاتورة البيع . فيمكنك على سبيل المثال انشاء قائمة تسعير خاصة بكل عميل على حدة.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- اعدادات   تسعير اخرى -->
+    <div class="modal fade" id="pricingTypeelse" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="staticBackdropLabel">إضافة تسعير اخرى</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="mb-3">
+                            <input type="text" class="form-control" placeholder="إسم السعر">
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary">حفظ</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- اعدادات طباعة الباركود -->
+    <div class="modal fade" id="qrcodesetting" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="companyModalLabel">معلومات نموذج الشركة</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="إغلاق"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="companyForm">
+                        <div class="mb-3">
+                            <label for="companyName" class="form-label">اسم الشركة</label>
+                            <input type="text" class="form-control" id="companyName" required>
+                        </div>
+                        <div class="mb-3 d-flex">
+                            <div class="w-50 me-2">
+                                <label for="pricingType" class="form-label">نوع التسعير</label>
+                                <select class="form-select" id="pricingType" required>
+                                    <option value="">اختر نوع التسعير</option>
+                                    <option value="fixed">ثابت</option>
+                                    <option value="variable">متغير</option>
+                                    <option value="subscription">اشتراك</option>
+                                </select>
+                            </div>
+                            <div class="w-50">
+                                <label for="currency" class="form-label">العملة</label>
+                                <select class="form-select" id="currency" required>
+                                    <option value="">اختر العملة</option>
+                                    <option value="USD">دولار أمريكي</option>
+                                    <option value="EUR">يورو</option>
+                                    <option value="GBP">جنيه إسترليني</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <fieldset class="mb-4">
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="priceType" id="priceExTax"
+                                    value="exTax" required>
+                                <label class="form-check-label" for="priceExTax">
+                                    سعر البيع (بدون الضريبة)
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="priceType" id="priceIncTax"
+                                    value="incTax">
+                                <label class="form-check-label" for="priceIncTax">
+                                    سعر البيع (شامل الضريبة)
+                                </label>
+                            </div>
+                        </fieldset>
+
+                        <div class="mb-3">
+                            <label for="barcodeModel" class="form-label">نموذج الباركود (2.5 سم × 3.8 سم)</label>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="barcodeModel" id="model1"
+                                    value="model1" required>
+                                <label class="form-check-label" for="model1">النموذج 1 (سعر السلعة بدون الاسم)</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="barcodeModel" id="model2"
+                                    value="model2">
+                                <label class="form-check-label" for="model2">النموذج 2 (بدون السعر)</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="barcodeModel" id="model3"
+                                    value="model3">
+                                <label class="form-check-label" for="model3">النموذج 3 (اسم السلعة والسعر)</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="barcodeModel" id="model4"
+                                    value="model4">
+                                <label class="form-check-label" for="model4">النموذج 4 (مزدوج - الباركود والسعر)</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="barcodeModel" id="model5"
+                                    value="model5">
+                                <label class="form-check-label" for="model5">النموذج 5 (اسم السلعة والسعر واسم
+                                    الشركة)</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="barcodeModel" id="model6"
+                                    value="model6">
+                                <label class="form-check-label" for="model6">النموذج 6 (مزدوج - الرمز والسعر واسم
+                                    الشركة)</label>
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="barcodeSize" class="form-label">نموذج الباركود (2.5 سم × 5.0 سم)</label>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="barcodeModelLarge" id="model7"
+                                    value="model7" required>
+                                <label class="form-check-label" for="model7">النموذج 7 (اسم السلعة والسعر واسم
+                                    الشركة)</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="barcodeModelLarge" id="model8"
+                                    value="model8">
+                                <label class="form-check-label" for="model8">النموذج 8 (اسم السلعة واسم الشركة)</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="barcodeModelLarge" id="model9"
+                                    value="model9">
+                                <label class="form-check-label" for="model9">النموذج 9 (اللون والحجم)</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="barcodeModelLarge" id="model10"
+                                    value="model10">
+                                <label class="form-check-label" for="model10">النموذج 10 (بلد المنشأ)</label>
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="printerName" class="form-label">اسم الطابعة</label>
+                            <input type="text" class="form-control" id="printerName" required>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-primary" form="companyForm">حفظ</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- اعدادات  المرفقات الصور -->
+    <div class="modal fade" id="filesizeModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="fileModalLabel">إعدادات المرفقات والصور</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="fileUploadForm">
+
+                        <div class="mb-3">
+                            <label for="maxBanknoteSizeInput" class="form-label">تعيين الحجم الأقصى لصورة الأوراق
+                                النقدية (ميغابايت)</label>
+                            <input type="number" min="1" class="form-control" id="maxBanknoteSizeInput" value="1">
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="maxCheckSizeInput" class="form-label">تعيين الحد الأقصى لحجم نسخة الشيك
+                                (ميغابايت)</label>
+                            <input type="number" min="1" class="form-control" id="maxCheckSizeInput" value="2">
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="maxBillSizeInput" class="form-label">تعيين الحد الأقصى لحجم نسخة الفاتورة
+                                (ميغابايت)</label>
+                            <input type="number" min="1" class="form-control" id="maxBillSizeInput" value="2">
+                        </div>
+
+                        <div class="mb-3">
+                            <input type="checkbox" class="form-check-input" id="deleteCheck">
+                            <label for="deleteCheck" class="form-label"> حذف صورة الشيك / الكمبيالة بعد السداد (ينصح
+                                بها)</label>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-primary" form="fileUploadForm">حفظ</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ترتيب العناصر Modal -->
+    <div class="modal fade" id="sortSettingsModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        aria-labelledby="sortSettingsModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+                <!-- عنوان المودال -->
+                <div class="modal-header">
+                    <h5 class="modal-title" id="sortSettingsModalLabel">إعدادات الترتيب</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <!-- محتوى المودال -->
+                <div class="modal-body">
+                    <form>
+                        <!-- العناوين الرئيسية -->
+                        <div class="row mb-3 text-center fw-bold">
+                            <div class="col-6">ترتيب بواسطة</div>
+                            <div class="col-6">طريقة الترتيب</div>
+                        </div>
+
+                        <!-- ترتيب عرض الأصناف -->
+                        <div class="row py-3 align-items-center border-bottom">
+                            <div class="col-6 d-flex justify-content-between">
+                                <label class="form-label">ترتيب عرض الأصناف</label>
+                                <div>
+                                    <input type="radio" name="sort1" class="form-check-input me-1" checked> الكود
+                                    <input type="radio" name="sort1" class="form-check-input ms-3"> الاسم
+                                </div>
+                            </div>
+                            <div class="col-4 d-flex justify-content-end">
+                                <input type="radio" name="order1" class="form-check-input me-1" checked> تصاعدي
+                                <input type="radio" name="order1" class="form-check-input ms-3"> تنازلي
+                            </div>
+                        </div>
+
+                        <!-- ترتيب عرض فواتير البيع -->
+                        <div class="row py-3 align-items-center border-bottom">
+                            <div class="col-6 d-flex justify-content-between">
+                                <label class="form-label">ترتيب عرض فواتير البيع</label>
+                                <div>
+                                    <input type="radio" name="sort2" class="form-check-input me-1" checked> الكود
+                                    <input type="radio" name="sort2" class="form-check-input ms-3"> الاسم
+                                </div>
+                            </div>
+                            <div class="col-4 d-flex justify-content-end">
+                                <input type="radio" name="order2" class="form-check-input me-1" checked> تصاعدي
+                                <input type="radio" name="order2" class="form-check-input ms-3"> تنازلي
+                            </div>
+                        </div>
+
+                        <!-- ترتيب عرض مجموعات الأصناف -->
+                        <div class="row py-3 align-items-center border-bottom">
+                            <div class="col-6 d-flex justify-content-between">
+                                <label class="form-label">ترتيب عرض مجموعات الأصناف</label>
+                                <div>
+                                    <input type="radio" name="sort3" class="form-check-input me-1" checked> الكود
+                                    <input type="radio" name="sort3" class="form-check-input ms-3"> الاسم
+                                </div>
+                            </div>
+                            <div class="col-4 d-flex justify-content-end">
+                                <input type="radio" name="order3" class="form-check-input me-1" checked> تصاعدي
+                                <input type="radio" name="order3" class="form-check-input ms-3"> تنازلي
+                            </div>
+                        </div>
+
+                        <!-- ترتيب عرض العملاء -->
+                        <div class="row py-3 align-items-center border-bottom">
+                            <div class="col-6 d-flex justify-content-between">
+                                <label class="form-label">ترتيب عرض العملاء</label>
+                                <div>
+                                    <input type="radio" name="sort4" class="form-check-input me-1" checked> الكود
+                                    <input type="radio" name="sort4" class="form-check-input ms-3"> الاسم
+                                </div>
+                            </div>
+                            <div class="col-4 d-flex justify-content-end">
+                                <input type="radio" name="order4" class="form-check-input me-1" checked> تصاعدي
+                                <input type="radio" name="order4" class="form-check-input ms-3"> تنازلي
+                            </div>
+                        </div>
+
+                        <!-- ترتيب عرض الموردين -->
+                        <div class="row py-3 align-items-center border-bottom">
+                            <div class="col-6 d-flex justify-content-between">
+                                <label class="form-label">ترتيب عرض الموردين</label>
+                                <div>
+                                    <input type="radio" name="sort5" class="form-check-input me-1" checked> الكود
+                                    <input type="radio" name="sort5" class="form-check-input ms-3"> الاسم
+                                </div>
+                            </div>
+                            <div class="col-4 d-flex justify-content-end">
+                                <input type="radio" name="order5" class="form-check-input me-1" checked> تصاعدي
+                                <input type="radio" name="order5" class="form-check-input ms-3"> تنازلي
+                            </div>
+                        </div>
+
+                        <!-- ترتيب عرض مجموعة العملاء -->
+                        <div class="row py-3 align-items-center border-bottom">
+                            <div class="col-6 d-flex justify-content-between">
+                                <label class="form-label">ترتيب عرض مجموعة العملاء</label>
+                                <div>
+                                    <input type="radio" name="sort6" class="form-check-input me-1" checked> الكود
+                                    <input type="radio" name="sort6" class="form-check-input ms-3"> الاسم
+                                </div>
+                            </div>
+                            <div class="col-4 d-flex justify-content-end">
+                                <input type="radio" name="order6" class="form-check-input me-1" checked> تصاعدي
+                                <input type="radio" name="order6" class="form-check-input ms-3"> تنازلي
+                            </div>
+                        </div>
+
+                        <!-- ترتيب عرض مجموعة الموريدين -->
+                        <div class="row py-3 align-items-center border-bottom">
+                            <div class="col-6 d-flex justify-content-between">
+                                <label class="form-label">ترتيب عرض مجموعة الموريدين</label>
+                                <div>
+                                    <input type="radio" name="sort7" class="form-check-input me-1" checked> الكود
+                                    <input type="radio" name="sort7" class="form-check-input ms-3"> الاسم
+                                </div>
+                            </div>
+                            <div class="col-4 d-flex justify-content-end">
+                                <input type="radio" name="order7" class="form-check-input me-1" checked> تصاعدي
+                                <input type="radio" name="order7" class="form-check-input ms-3"> تنازلي
+                            </div>
+                        </div>
+
+                        <!-- ترتيب عرض  الحسابات -->
+                        <div class="row py-3 align-items-center">
+                            <div class="col-6 d-flex justify-content-between">
+                                <label class="form-label">ترتيب عرض الحسابات</label>
+                                <div>
+                                    <input type="radio" name="sort8" class="form-check-input me-1" checked> الكود
+                                    <input type="radio" name="sort8" class="form-check-input ms-3"> الاسم
+                                </div>
+                            </div>
+                            <div class="col-4 d-flex justify-content-end">
+                                <input type="radio" name="order8" class="form-check-input me-1" checked> تصاعدي
+                                <input type="radio" name="order8" class="form-check-input ms-3"> تنازلي
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <!-- الأزرار في الأسفل -->
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-primary">حفظ</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- مودال إعدادات حساب المتاجرة -->
+    <div class="modal fade" id="tradingModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        aria-labelledby="tradingModalModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="tradingModalModalLabel">إعدادات حساب المتاجرة</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <ul>
+                        <!-- الخصم المسموح به -->
+                        <li>
+                            <button class="btn btn-link text-decoration-none" data-bs-toggle="collapse" data-bs-target="#discount">
+                                <span>الخصم المسموح به</span>
+                            </button>
+                            <ul id="discount" class="collapse ps-4">
+                                <li><input type="checkbox" id="discountAllowed"> الخصم المسموح به</li>
+                            </ul>
+                        </li>
+
+                        <!-- إهلاك أصول ثابتة -->
+                        <li>
+                            <button class="btn btn-link text-decoration-none" data-bs-toggle="collapse" data-bs-target="#assets">
+                                <span>إهلاك أصول ثابتة</span>
+                            </button>
+                            <ul id="assets" class="collapse ps-4">
+                                <li><input type="checkbox" id="depreciationFixedAssets"> إهلاك أصول ثابتة</li>
+                                <li><input type="checkbox" id="depreciationAssets"> إهلاكات أصول ثابتة</li>
+                            </ul>
+                        </li>
+
+                        <!-- بضاعة تالفة -->
+                        <li>
+                            <button class="btn btn-link text-decoration-none" data-bs-toggle="collapse" data-bs-target="#damagedGoods">
+                                <span>بضاعة تالفة</span>
+                            </button>
+                            <ul id="damagedGoods" class="collapse ps-4">
+                                <li><input type="checkbox" id="damagedGoodsItem"> بضاعة تالفة</li>
+                            </ul>
+                        </li>
+
+                        <!-- مصروفات متنوعة -->
+                        <li>
+                            <button class="btn btn-link text-decoration-none" data-bs-toggle="collapse" data-bs-target="#expenses">
+                                <span>مصروفات متنوعة</span>
+                            </button>
+                            <ul id="expenses" class="collapse ps-4">
+                                <li>
+                                    <button class="btn btn-link text-decoration-none" data-bs-toggle="collapse" data-bs-target="#adminExpenses">
+                                        <span>مصروفات إدارية وعمومية</span>
+                                    </button>
+                                    <ul id="adminExpenses" class="collapse ps-4">
+                                        <li><input type="checkbox" id="adminSalaries"> مصروفات مرتبات</li>
+                                        <li><input type="checkbox" id="adminIncentives"> مصروفات حوافز</li>
+                                        <li><input type="checkbox" id="adminSupplies"> مصروفات أدوات مكتبية وإدارية</li>
+                                        <li><input type="checkbox" id="adminMaintenance"> مصروفات صيانة</li>
+                                        <li><input type="checkbox" id="adminCleaning"> مصروفات نظافة وصيانة</li>
+                                        <li><input type="checkbox" id="adminTraining"> مصروفات تربية</li>
+                                        <li><input type="checkbox" id="adminCommunications"> مصروفات اتصالات</li>
+                                        <li><input type="checkbox" id="adminTips"> مصروفات إكراميات</li>
+                                        <li><input type="checkbox" id="adminMeetings"> مصروفات اجتماعات</li>
+                                        <li><input type="checkbox" id="adminInsurance"> مصروفات تأمينات اجتماعية</li>
+                                        <li><input type="checkbox" id="adminStorage"> مصروفات إيجار مخزن</li>
+                                        <li><input type="checkbox" id="adminSweeper"> مصروفات سويفر</li>
+                                    </ul>
+                                </li>
+                                <li><input type="checkbox" id="bankExpenses"> مصروفات بنكية</li>
+                            </ul>
+                        </li>
+
+                        <!-- مصروفات بيع -->
+                        <li>
+                            <button class="btn btn-link text-decoration-none" data-bs-toggle="collapse" data-bs-target="#sellingExpenses">
+                                <span>مصروفات بيع</span>
+                            </button>
+                            <ul id="sellingExpenses" class="collapse ps-4">
+                                <li><input type="checkbox" id="sellingExpensesItem"> مصروفات بيع</li>
+                                <li><input type="checkbox" id="salesCommission"> عمولة مبيعات</li>
+                            </ul>
+                        </li>
+
+                        <!-- مصاريف مشتريات -->
+                        <li>
+                            <button class="btn btn-link text-decoration-none" data-bs-toggle="collapse" data-bs-target="#purchases">
+                                <span>مصاريف مشتريات</span>
+                            </button>
+                            <ul id="purchases" class="collapse ps-4">
+                                <li><input type="checkbox" id="purchaseExpenses"> مصاريف مشتريات</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary">حفظ</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- إعدادات بيانات اضافية لفاتورة البيع -->
+    <div class="modal fade" id="additionalDataModal" tabindex="-1" aria-labelledby="additionalDataModalLabel" aria-hidden="true">
+        <div class="modal-dialog  modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="additionalDataModalLabel">إعدادات بيانات إضافية لفاتورة البيع</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="mb-3">
+                            <label for="customsClearanceNumber" class="form-label">كود البيان</label>
+                            <input type="text" class="form-control" id="customsClearanceNumber" placeholder="أدخل كود البيان">
+                        </div>
+                        <div class="mb-3">
+                            <label for="shipmentNumber" class="form-label">اسم البيان</label>
+                            <input type="text" class="form-control" id="shipmentNumber" placeholder="أدخل  اسم البيان">
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary">حفظ</button>
+                    <button type="button" class="btn btn-danger">حذف</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div class="time-date-section">
+        <div class="current-time">
+            <span id="time">00:00:00</span>
+        </div>
+        <ul class="date-list">
+            <li>التاريخ: <span id="current-date"></span></li>
+        </ul>
+    </div>
+
+    <div class="footer-text">
+        <span class="biztrack">BizTrack</span>
+        <span>تتبع أعمالك</span>
+    </div>
+
+    <script src="js/jquery.js"></script>
+    <script src="js/popper.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/js.js"></script>
+</body>
+
+</html>

@@ -87,9 +87,12 @@
                             </li>
 
                             <!-- إعدادات الكاشير -->
-                            <li><a class="dropdown-item" href="#">إعدادات ميزان الباركود</a></li>
-                            <li><a class="dropdown-item" href="#">إعدادات طابعة الكاشير</a></li>
-                            <li><a class="dropdown-item" href="#">إعدادات فاتورة الكاشير</a></li>
+                            <li><a class="dropdown-item" href="#" data-bs-toggle="modal"
+                                    data-bs-target="#barcodeScaleModal">إعدادات ميزان الباركود</a></li>
+                            <li><a class="dropdown-item" href="#" data-bs-toggle="modal"
+                                    data-bs-target="#cashierPrinterModal">إعدادات طابعة الكاشير</a></li>
+                            <li><a class="dropdown-item" href="#" data-bs-toggle="modal"
+                                    data-bs-target="#cashierInvoiceModal">إعدادات فاتورة الكاشير</a></li>
                             <li>
                                 <hr class="dropdown-divider">
                             </li>
@@ -1299,8 +1302,116 @@
         </div>
     </div>
 
+    <!-- إعدادات ميزان الباركود-->
+    <div class="modal fade" id="barcodeScaleModal" tabindex="-1" aria-labelledby="barcodeScaleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="barcodeScaleModalLabel">إعدادات ميزان الباركود</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form>
+                <div class="mb-3">
+                    <label for="barcodeStart" class="form-label">من</label>
+                    <input type="number" class="form-control" id="barcodeStart" placeholder="أدخل الكود الأول">
+                </div>
+                <div class="mb-3">
+                    <label for="barcodeEnd" class="form-label">إلى</label>
+                    <input type="number" class="form-control" id="barcodeEnd" placeholder="أدخل الكود الأخير">
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="enableBarcodeScale">
+                    <label class="form-check-label" for="enableBarcodeScale">تفعيل</label>
+                </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary">حفظ</button>
+            </div>
+            </div>
+        </div>
+        </div>
 
+        <!-- إعدادات طابعة الكاشير-->
+    <div class="modal fade" id="cashierPrinterModal" tabindex="-1" aria-labelledby="cashierPrinterModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="cashierPrinterModalLabel">إعدادات طابعة الكاشير</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form>
+                <div class="mb-3">
+                    <label for="cashierPrinter" class="form-label">طابعة الكاشير</label>
+                    <select class="form-select" id="cashierPrinter">
+                    <option value="">اختر طابعة...</option>
+                    <option value="printer1">طابعة 1</option>
+                    <option value="printer2">طابعة 2</option>
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <label for="copiesNumber" class="form-label">عدد النسخ</label>
+                    <input type="number" class="form-control" id="copiesNumber" placeholder="أدخل عدد النسخ">
+                </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary">حفظ</button>
+            </div>
+            </div>
+        </div>
+    </div>
 
+        <!-- إعدادات فاتورة الكاشير-->
+    <div class="modal fade" id="cashierInvoiceModal" tabindex="-1" aria-labelledby="cashierInvoiceModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="cashierInvoiceModalLabel">إعدادات فاتورة الكاشير</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form>
+                <div class="mb-3">
+                    <label class="form-label">نموذج الفاتورة</label>
+                    <div class="form-check">
+                    <input class="form-check-input" type="radio" name="invoiceTemplate" id="template1">
+                    <label class="form-check-label" for="template1">نموذج يحتوي كود الصنف</label>
+                    </div>
+                    <div class="form-check">
+                    <input class="form-check-input" type="radio" name="invoiceTemplate" id="template2">
+                    <label class="form-check-label" for="template2">نموذج يحتوي سعر الوحدة</label>
+                    </div>
+                    <div class="form-check">
+                    <input class="form-check-input" type="radio" name="invoiceTemplate" id="template3">
+                    <label class="form-check-label" for="template3">نموذج يحتوي الاسم وسعر الوحدة</label>
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">بيانات الفاتورة</label>
+                    <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="printCommercialRecord">
+                    <label class="form-check-label" for="printCommercialRecord">طباعة الرقم التجاري</label>
+                    </div>
+                    <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="printTaxNumber">
+                    <label class="form-check-label" for="printTaxNumber">طباعة الرقم الضريبي</label>
+                    </div>
+                    <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="printVATNumber">
+                    <label class="form-check-label" for="printVATNumber">طباعة رقم التسجيل في القيمة المضافة</label>
+                    </div>
+                </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary">حفظ</button>
+            </div>
+            </div>
+        </div>
+    </div>
 
 
 

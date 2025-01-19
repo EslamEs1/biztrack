@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BizTrack</title>
+    <link href="css/style.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body>
+    <div class="container">
+
+        <aside class="sidebar">
+            <div class="logo">BizTrack</div>
+            <nav>
+                <ul class="menu">
+                    <li>
+                        <a href="#" class="dropdown-link" data-category="dashboard" data-section="dashboard">
+                            <span class="icon">📊</span>لوحة التحكم
+                        </a>
+                    </li>
+                    <li class="has-submenu">
+                        <a href="#"><span class="icon">👥</span>إدارة المستخدمين<span class="arrow">▼</span></a>
+                        <ul class="submenu">
+                            <li><a href="#" class="dropdown-link" data-category="users" data-section="users-list">المستخدمين</a></li>
+                            <li><a href="#" class="dropdown-link" data-category="users" data-section="permissions">الصلاحيات</a></li>
+                            <li><a href="#" class="dropdown-link" data-category="users" data-section="representatives">المندوبين</a></li>
+                            <li><a href="#" class="dropdown-link" data-category="users" data-section="change-password">تغيير كلمة السر</a></li>
+                        </ul>
+                    </li>
+                    <li class="has-submenu">
+                        <a href="#" class="dropdown-link"><span class="icon">📝</span>المبيعات<span class="arrow">▼</span></a>
+                        <ul class="submenu">
+                            <li><a href="#" class="dropdown-link" data-category="sales" data-section="invoice-management">إدارة الفواتير</a></li>
+                            <li><a href="#" class="dropdown-link" data-category="sales" data-section="create-invoice">إنشاء فاتورة</a></li>
+                            <li><a href="#" class="dropdown-link" data-category="sales" data-section="quote-management">إدارة عروض الأسعار</a></li>
+                            <li><a href="#" class="dropdown-link" data-category="sales" data-section="create-quote">إنشاء عرض سعر</a></li>
+                            <li><a href="#" class="dropdown-link" data-category="sales" data-section="credit-notices">إشعارات دائنة</a></li>
+                            <li><a href="#" class="dropdown-link" data-category="sales" data-section="returned-invoices">الفواتير المرتجعة</a></li>
+                            <li><a href="#" class="dropdown-link" data-category="sales" data-section="recurring-invoices">الفواتير الدورية</a></li>
+                            <li><a href="#" class="dropdown-link" data-category="sales" data-section="customer-payments">مدفوعات العملاء</a></li>
+                            <li><a href="#" class="dropdown-link" data-category="sales" data-section="sales-settings">إعدادات المبيعات</a></li>
+                        </ul>
+                    </li>
+                    <li class="has-submenu">
+                        <a href="#"><span class="icon">👥</span>العملاء<span class="arrow">▼</span></a>
+                        <ul class="submenu">
+                            <li><a href="#" class="dropdown-link" data-category="customers" data-section="customer-management">إدارة العملاء</a></li>
+                            <li><a href="#" class="dropdown-link" data-category="customers" data-section="add-new-customer">إضافة عميل جديد</a></li>
+                            <li><a href="#" class="dropdown-link" data-category="customers" data-section="contact-list">قائمة الاتصال</a></li>
+                            <li><a href="#" class="dropdown-link" data-category="customers" data-section="customer-settings">إعدادات العميل</a></li>
+                        </ul>
+                    </li>
+                    <li class="has-submenu">
+                        <a href="#"><span class="icon">📦</span>المخزون<span class="arrow">▼</span></a>
+                        <ul class="submenu">
+                            <li><a href="#" class="dropdown-link" data-category="inventory" data-section="products-services">المنتجات والخدمات</a></li>
+                            <li><a href="#" class="dropdown-link" data-category="inventory" data-section="inventory-management">إدارة الإذون المخزنية</a></li>
+                            <li><a href="#" class="dropdown-link" data-category="inventory" data-section="price-lists">قوائم الأسعار</a></li>
+                            <li><a href="#" class="dropdown-link" data-category="inventory" data-section="warehouses">المستودعات</a></li>
+                            <li><a href="#" class="dropdown-link" data-category="inventory" data-section="inventory-control">إدارة الجرد</a></li>
+                            <li><a href="#" class="dropdown-link" data-category="inventory" data-section="inventory-settings">إعدادات المخزون</a></li>
+                            <li><a href="#" class="dropdown-link" data-category="inventory" data-section="product-settings">إعدادات المنتجات</a></li>
+                        </ul>
+                    </li>
+                    <li class="has-submenu">
+                        <a href="#"><span class="icon">🛒</span>المشتريات<span class="arrow">▼</span></a>
+                        <ul class="submenu">
+                            <li><a href="#" class="dropdown-link" data-category="purchases" data-section="purchase-invoices">فواتير الشراء</a></li>
+                            <li><a href="#" class="dropdown-link" data-category="purchases" data-section="purchase-returns">مرتجعات المشتريات</a></li>
+                            <li><a href="#" class="dropdown-link" data-category="purchases" data-section="debit-notices">إشعارات مدينة</a></li>
+                            <li><a href="#" class="dropdown-link" data-category="purchases" data-section="supplier-management">إدارة الموردين</a></li>
+                            <li><a href="#" class="dropdown-link" data-category="purchases" data-section="supplier-payments">مدفوعات الموردين</a></li>
+                            <li><a href="#" class="dropdown-link" data-category="purchases" data-section="purchase-invoice-settings">إعدادات فواتير الشراء</a></li>
+                            <li><a href="#" class="dropdown-link" data-category="purchases" data-section="supplier-settings">إعدادات الموردين</a></li>
+                        </ul>
+                    </li>
+                    <li class="has-submenu">
+                        <a href="#"><span class="icon">💰</span>المالية<span class="arrow">▼</span></a>
+                        <ul class="submenu">
+                            <li><a href="#" class="dropdown-link" data-category="finance" data-section="expenses">المصروفات</a></li>
+                            <li><a href="#" class="dropdown-link" data-category="finance" data-section="receipts">سندات القبض</a></li>
+                            <li><a href="#" class="dropdown-link" data-category="finance" data-section="accounts-and-banks">خزائن وحسابات بنكية</a></li>
+                            <li><a href="#" class="dropdown-link" data-category="finance" data-section="financial-settings">إعدادات المالية</a></li>
+                        </ul>
+                    </li>
+                    <li class="has-submenu">
+                        <a href="#"><span class="icon">📊</span>الحسابات العامة<span class="arrow">▼</span></a>
+                        <ul class="submenu">
+                            <li><a href="#" class="dropdown-link" data-category="general-accounts" data-section="daily-restrictions">القيود اليومية</a></li>
+                            <li><a href="#" class="dropdown-link" data-category="general-accounts" data-section="add-restriction">أضف قيد</a></li>
+                            <li><a href="#" class="dropdown-link" data-category="general-accounts" data-section="account-guide">دليل الحسابات</a></li>
+                            <li><a href="#" class="dropdown-link" data-category="general-accounts" data-section="cost-centers">مراكز التكلفة</a></li>
+                            <li><a href="#" class="dropdown-link" data-category="general-accounts" data-section="assets">الأصول</a></li>
+                            <li><a href="#" class="dropdown-link" data-category="general-accounts" data-section="general-account-settings">إعدادات الحسابات العامة</a></li>
+                        </ul>
+                    </li>
+                    <li class="has-submenu">
+                        <a href="#"><span class="icon">👔</span>الموظفين<span class="arrow">▼</span></a>
+                        <ul class="submenu">
+                            <li><a href="#" class="dropdown-link" data-category="employees" data-section="employee-management">إدارة الموظفين</a></li>
+                            <li><a href="#" class="dropdown-link" data-category="employees" data-section="roles-management">إدارة أدوار الموظفين</a></li>
+                            <li><a href="#" class="dropdown-link" data-category="employees" data-section="employee-settings">الإعدادات</a></li>
+                        </ul>
+                    </li>
+                    <li class="has-submenu">
+                        <a href="#"><span class="icon">📈</span>التقارير<span class="arrow">▼</span></a>
+                        <ul class="submenu">
+                            <li><a href="#" class="dropdown-link" data-category="reports" data-section="sales-reports">تقارير المبيعات</a></li>
+                            <li><a href="#" class="dropdown-link" data-category="reports" data-section="purchases-reports">تقارير المشتريات</a></li>
+                            <li><a href="#" class="dropdown-link" data-category="reports" data-section="general-accounts-reports">تقارير الحسابات العامة</a></li>
+                            <li><a href="#" class="dropdown-link" data-category="reports" data-section="customers-reports">تقارير العملاء</a></li>
+                            <li><a href="#" class="dropdown-link" data-category="reports" data-section="inventory-reports">تقارير المخزون</a></li>
+                            <li><a href="#" class="dropdown-link" data-category="reports" data-section="activity-log">سجل النشاطات للحساب</a></li>
+                        </ul>
+                    </li>
+                    <li class="has-submenu">
+                        <a href="#"><span class="icon">📋</span>القوالب<span class="arrow">▼</span></a>
+                        <ul class="submenu">
+                            <li><a href="#" class="dropdown-link" data-category="templates" data-section="print-templates">قوالب للطباعة</a></li>
+                            <li><a href="#" class="dropdown-link" data-category="templates" data-section="invoice-templates">قوالب الفواتير الجاهزة</a></li>
+                            <li><a href="#" class="dropdown-link" data-category="templates" data-section="email-templates">قوالب البريد الإلكتروني</a></li>
+                            <li><a href="#" class="dropdown-link" data-category="templates" data-section="terms-and-conditions">الشروط والأحكام</a></li>
+                            <li><a href="#" class="dropdown-link" data-category="templates" data-section="file-management">إدارة الملفات والمستندات</a></li>
+                            <li><a href="#" class="dropdown-link" data-category="templates" data-section="auto-send-rules">قواعد الإرسال الآلي</a></li>
+                        </ul>
+                    </li>
+                    <li class="has-submenu">
+                        <a href="#"><span class="icon">⚙️</span>الإعدادات<span class="arrow">▼</span></a>
+                        <ul class="submenu">
+                            <li><a href="#" class="dropdown-link" data-category="settings" data-section="account-info">معلومات الحساب</a></li>
+                            <li><a href="#" class="dropdown-link" data-category="settings" data-section="account-settings">إعدادات الحساب</a></li>
+                            <li><a href="#" class="dropdown-link" data-category="settings" data-section="smtp-settings">إعدادات الـ SMTP</a></li>
+                            <li><a href="#" class="dropdown-link" data-category="settings" data-section="payment-methods">طرق الدفع</a></li>
+                            <li><a href="#" class="dropdown-link" data-category="settings" data-section="serial-number-settings">إعدادات الترقيم المتسلسل</a></li>
+                            <li><a href="#" class="dropdown-link" data-category="settings" data-section="tax-settings">إعدادات الضرائب</a></li>
+                            <li><a href="#" class="dropdown-link" data-category="settings" data-section="app-management">إدارة التطبيقات</a></li>
+                            <li><a href="#" class="dropdown-link" data-category="settings" data-section="branding">شعار وألوان النظام</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+
+
+        <main class="main-content">
+            <div id="content">
+            </div>
+        </main>
+    </div>
+    <script type="module" src="js/main.js"></script>
+</body>
+
+</html>

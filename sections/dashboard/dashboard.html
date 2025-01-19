@@ -1,0 +1,166 @@
+<!-- لوحة التحكم -->
+    <div id="dashboard" class="page-content active-page">
+        <header>
+            <div class="search-bar">
+                <input type="search" placeholder="بحث عن الفواتير والعملاء">
+                <button class="search-btn">🔍</button>
+            </div>
+            <div class="header-actions">
+                <div class="notifications">
+                    <button class="notification-btn">
+                        <i class="fas fa-bell"></i>
+                        <span class="notification-badge">3</span>
+                    </button>
+                    <div class="notification-dropdown">
+                        <div class="notification-item unread">
+                            <i class="fas fa-file-invoice"></i>
+                            <div class="notification-content">
+                                <p>تم إنشاء فاتورة جديدة #INV-004</p>
+                                <span class="notification-time">قبل 5 دقائق</span>
+                            </div>
+                        </div>
+                        <div class="notification-item unread">
+                            <i class="fas fa-check-circle"></i>
+                            <div class="notification-content">
+                                <p>تم تأكيد الدفع للفاتورة #INV-002</p>
+                                <span class="notification-time">قبل 15 دقيقة</span>
+                            </div>
+                        </div>
+                        <div class="notification-item">
+                            <i class="fas fa-exclamation-circle"></i>
+                            <div class="notification-content">
+                                <p>فاتورة متأخرة #INV-001</p>
+                                <span class="notification-time">قبل ساعة</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="user-menu">
+                    <button class="user-btn">
+                        <img src="https://ui-avatars.com/api/?name=Admin&background=0D8ABC&color=fff"
+                            alt="صورة المستخدم" class="user-avatar">
+                        <span>المدير</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <div class="dashboard-header">
+            <h1>لوحة التحكم</h1>
+            <div class="date-filter">
+                <button class="filter-btn active">اليوم</button>
+                <button class="filter-btn">الأسبوع</button>
+                <button class="filter-btn">الشهر</button>
+                <button class="filter-btn">السنة</button>
+            </div>
+        </div>
+
+        <div class="shortcuts-grid">
+            <div class="shortcut-item">
+                <span class="icon">📄</span>
+                <span class="label">فاتورة جديدة</span>
+            </div>
+            <div class="shortcut-item">
+                <span class="icon">👤</span>
+                <span class="label">عميل جديد</span>
+            </div>
+            <div class="shortcut-item">
+                <span class="icon">📦</span>
+                <span class="label">منتج جديد</span>
+            </div>
+            <div class="shortcut-item">
+                <span class="icon">💰</span>
+                <span class="label">تحصيل</span>
+            </div>
+            <div class="shortcut-item">
+                <span class="icon">📋</span>
+                <span class="label">عرض سعر</span>
+            </div>
+            <div class="shortcut-item">
+                <span class="icon">🏷️</span>
+                <span class="label">مرتجع مبيعات</span>
+            </div>
+        </div>
+
+        <div class="stats-cards">
+            <div class="stat-card">
+                <h3>إجمالي المبيعات</h3>
+                <div class="amount">SAR 4,554,000</div>
+                <div class="comparison">+12% عن الشهر السابق</div>
+            </div>
+            <div class="stat-card">
+                <h3>إجمالي التحصيلات</h3>
+                <div class="amount">SAR 2,548,000</div>
+                <div class="comparison">+8% عن الشهر السابق</div>
+            </div>
+            <div class="stat-card">
+                <h3>المبالغ المستحقة</h3>
+                <div class="amount">SAR 10,907,875.50</div>
+                <div class="comparison">-5% عن الشهر السابق</div>
+            </div>
+        </div>
+
+        <div class="charts-container">
+            <div class="chart-card">
+                <h3>تحليل المبيعات</h3>
+                <div class="chart">
+                    <canvas id="salesChart"></canvas>
+                </div>
+            </div>
+            <div class="chart-card">
+                <h3>توزيع المبيعات حسب المنتجات</h3>
+                <div class="chart">
+                    <canvas id="productsPieChart"></canvas>
+                </div>
+            </div>
+            <div class="chart-card">
+                <h3>توزيع المبيعات حسب العملاء</h3>
+                <div class="chart">
+                    <canvas id="customersPieChart"></canvas>
+                </div>
+            </div>
+        </div>
+
+        <div class="tables-section">
+            <div class="recent-invoices">
+                <h3>آخر الفواتير</h3>
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>رقم الفاتورة</th>
+                            <th>التاريخ</th>
+                            <th>العميل</th>
+                            <th>المبلغ</th>
+                            <th>الحالة</th>
+                            <th>الإجراءات</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>#INV-001</td>
+                            <td>2024/02/21</td>
+                            <td>شركة المستقبل</td>
+                            <td>8,500 ر.س</td>
+                            <td><span class="status-paid">مدفوعة</span></td>
+                            <td>
+                                <button class="table-action-btn">عرض</button>
+                                <button class="table-action-btn">طباعة</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>#INV-002</td>
+                            <td>2024/02/20</td>
+                            <td>مؤسسة الأمل</td>
+                            <td>12,300 ر.س</td>
+                            <td><span class="status-pending">معلقة</span></td>
+                            <td>
+                                <button class="table-action-btn">عرض</button>
+                                <button class="table-action-btn">طباعة</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>

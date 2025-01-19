@@ -1,0 +1,108 @@
+<section id="invoice-management" class="page-content">
+    <div class="invoice-header">
+        <div class="header-top">
+            <h1>إدارة الفواتير</h1>
+            <button class="btn-create">
+                <i class="fas fa-plus"></i>
+                إنشاء فاتورة جديدة
+            </button>
+        </div>
+        <div class="search-filters">
+            <div class="search-box">
+                <i class="fas fa-search"></i>
+                <input type="text" placeholder="البحث عن الفواتير...">
+            </div>
+            <select>
+                <option value="">جميع الحالات</option>
+                <option value="paid">مدفوع</option>
+                <option value="pending">معلق</option>
+                <option value="cancelled">ملغي</option>
+            </select>
+        </div>
+    </div>
+
+    <div class="invoices-table">
+        <table>
+            <thead>
+                <tr>
+                    <th>رقم الفاتورة</th>
+                    <th>الحالة</th>
+                    <th>التاريخ</th>
+                    <th>المبلغ</th>
+                    <th>الإجراءات</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>INV-001</td>
+                    <td><span class="status paid">مدفوع</span></td>
+                    <td>15-03-2024</td>
+                    <td>1,500 ريال</td>
+                    <td class="actions">
+                        <button class="btn-icon" title="عرض التفاصيل">
+                            <i class="fas fa-eye"></i>
+                        </button>
+                        <button class="btn-icon" title="إلغاء">
+                            <i class="fas fa-times"></i>
+                        </button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>INV-002</td>
+                    <td><span class="status pending">معلق</span></td>
+                    <td>14-03-2024</td>
+                    <td>2,300 ريال</td>
+                    <td class="actions">
+                        <button class="btn-icon" title="عرض التفاصيل">
+                            <i class="fas fa-eye"></i>
+                        </button>
+                        <button class="btn-icon" title="إلغاء">
+                            <i class="fas fa-times"></i>
+                        </button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>INV-003</td>
+                    <td><span class="status cancelled">ملغي</span></td>
+                    <td>13-03-2024</td>
+                    <td>800 ريال</td>
+                    <td class="actions">
+                        <button class="btn-icon" title="عرض التفاصيل">
+                            <i class="fas fa-eye"></i>
+                        </button>
+                        <button class="btn-icon" title="إلغاء">
+                            <i class="fas fa-times"></i>
+                        </button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="timeline">
+        <h2>السجل الزمني</h2>
+        <div class="timeline-items">
+            <div class="timeline-item">
+                <div class="time">15:30 - اليوم</div>
+                <div class="event">
+                    <i class="fas fa-check-circle"></i>
+                    تم دفع الفاتورة INV-001
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="time">14:20 - اليوم</div>
+                <div class="event">
+                    <i class="fas fa-clock"></i>
+                    تم إنشاء فاتورة جديدة INV-002
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="time">13:15 - اليوم</div>
+                <div class="event">
+                    <i class="fas fa-times-circle"></i>
+                    تم إلغاء الفاتورة INV-003
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

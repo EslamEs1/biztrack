@@ -1,0 +1,190 @@
+:root {
+    --primary-color: #2563eb;
+    --secondary-color: #3b82f6;
+    --background-color: #f8fafc;
+    --sidebar-color: #1e40af;
+    --text-color: #1e293b;
+    --border-color: #e2e8f0;
+    --hover-color: #3b82f6;
+    --success-color: #10b981;
+    --warning-color: #f59e0b;
+    --danger-color: #ef4444;
+}
+
+
+#invoice-management .status-badge {
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 14px;
+}
+
+#invoice-management .status-paid {
+    background-color: #e7f7ef;
+    color: #00b894;
+}
+
+#invoice-management .status-pending {
+    background-color: #fff8e7;
+    color: #fdcb6e;
+}
+
+#invoice-management .status-cancelled {
+    background-color: #ffe7e7;
+    color: #ff7675;
+}
+
+#invoice-management .timeline {
+    position: relative;
+    padding-right: 30px;
+}
+
+#invoice-management .timeline::before {
+    content: '';
+    position: absolute;
+    right: 10px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background-color: var(--background-color);
+}
+
+#invoice-management .timeline-item {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+#invoice-management .timeline-dot {
+    position: absolute;
+    right: -30px;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: #fff;
+    border: 2px solid;
+}
+
+#invoice-management .dot-success {
+    border-color: #00b894;
+}
+
+#invoice-management .dot-warning {
+    border-color: #fdcb6e;
+}
+#invoice-management .dot-danger {
+    border-color: #ff7675;
+}
+
+#invoice-management .search-input {
+    border-radius: 8px;
+    padding: 10px 40px 10px 20px;
+    border: 1px solid var(--border-color);
+}
+
+#invoice-management .search-icon {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #6c757d;
+}
+
+/* تنسيقات السجل الزمني */
+#invoice-management .timeline {
+    position: relative;
+    padding-right: 2rem;
+}
+
+#invoice-management .timeline::before {
+    content: '';
+    position: absolute;
+    right: 7px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background-color: var(--background-color);
+}
+
+#invoice-management .timeline-item {
+    position: relative;
+    padding-bottom: 1.5rem;
+}
+
+#invoice-management .timeline-item:last-child {
+    padding-bottom: 0;
+}
+
+#invoice-management .timeline-marker {
+    position: absolute;
+    right: -2rem;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    border: 3px solid var(--border-color);
+    box-shadow: 0 0 0 2px #e9ecef;
+}
+
+#invoice-management .timeline-content {
+    background-color: var(--background-color);
+    padding: 1rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+#invoice-management .timeline-content:hover {
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+#invoice-management .row.g3.mb-4{
+    display: flex;
+    align-items: center;
+}
+
+
+#invoice-management svg.svg-inline--fa.fa-xmark{
+    color: var(--danger-color);
+}
+
+#invoice-management svg.svg-inline--fa.fa-eye{
+    color: var(--success-color);
+}
+
+
+/* create-invoice ---------------------------------- */
+#create-invoice input , #create-invoice textarea, #create-invoice select{
+    border-radius: 8px;
+    padding: 10px 20px 10px 20px;
+    border: 1px solid var(--border-color);
+}
+
+.card{
+    border: 1px solid var(--border-color);
+}
+
+.form-group{
+    margin-bottom: 20px;
+}
+
+label{
+    color: rgb(102, 102, 102);
+    margin-bottom: 5px;
+
+}
+
+.card-title{
+    color: var(--primary-color);
+}
+
+.dropdown-menu {
+    border-radius: 8px;
+}
+
+.dropdown-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+
+

@@ -35,7 +35,13 @@ document.addEventListener("DOMContentLoaded", function () {
             // Load the corresponding section
             const targetSection = this.getAttribute("data-section");
             const targetCategory = this.getAttribute("data-category"); // القسم الرئيسي (مثل "sales")
+
             if (targetSection && targetCategory) {
+                // Save the current section and category to localStorage
+                localStorage.setItem("currentCategory", targetCategory);
+                localStorage.setItem("currentSection", targetSection);
+
+                // Load the section
                 loadSection(targetCategory, targetSection);
             }
         });
@@ -51,8 +57,11 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 
-    // Load the default section (Dashboard)
-    loadSection("dashboard", "dashboard");
+    // Load the saved section or default to dashboard
+    const savedCategory =
+        localStorage.getItem("currentCategory") || "dashboard";
+    const savedSection = localStorage.getItem("currentSection") || "dashboard";
+    loadSection(savedCategory, savedSection);
 
     // Initialize charts
     initializeCharts();
@@ -77,11 +86,29 @@ function loadSection(category, section) {
             if (section === "dashboard") {
                 initializeCharts();
             }
+
+            // Highlight the active link in the sidebar
+            highlightActiveLink(category, section);
         })
         .catch((error) => {
             console.error("Error loading section:", error);
             contentDiv.innerHTML = `<p>Error loading section: ${error.message}</p>`;
         });
+}
+
+// Function to highlight the active link in the sidebar
+function highlightActiveLink(category, section) {
+    const navLinks = document.querySelectorAll(".dropdown-link");
+    navLinks.forEach((link) => {
+        link.classList.remove("active");
+
+        const linkCategory = link.getAttribute("data-category");
+        const linkSection = link.getAttribute("data-section");
+
+        if (linkCategory === category && linkSection === section) {
+            link.classList.add("active");
+        }
+    });
 }
 
 function initializeCharts() {

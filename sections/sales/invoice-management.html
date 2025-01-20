@@ -1,106 +1,169 @@
+<header>
+    <div class="search-bar">
+        <input type="search" placeholder="بحث عن الفواتير والعملاء">
+        <button class="search-btn">🔍</button>
+    </div>
+    <div class="header-actions">
+        <div class="notifications">
+            <button class="notification-btn">
+                <i class="fas fa-bell"></i>
+                <span class="notification-badge">3</span>
+            </button>
+            <div class="notification-dropdown">
+                <div class="notification-item unread">
+                    <i class="fas fa-file-invoice"></i>
+                    <div class="notification-content">
+                        <p>تم إنشاء فاتورة جديدة #INV-004</p>
+                        <span class="notification-time">قبل 5 دقائق</span>
+                    </div>
+                </div>
+                <div class="notification-item unread">
+                    <i class="fas fa-check-circle"></i>
+                    <div class="notification-content">
+                        <p>تم تأكيد الدفع للفاتورة #INV-002</p>
+                        <span class="notification-time">قبل 15 دقيقة</span>
+                    </div>
+                </div>
+                <div class="notification-item">
+                    <i class="fas fa-exclamation-circle"></i>
+                    <div class="notification-content">
+                        <p>فاتورة متأخرة #INV-001</p>
+                        <span class="notification-time">قبل ساعة</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="user-menu">
+            <button class="user-btn">
+                <img src="https://ui-avatars.com/api/?name=Admin&background=0D8ABC&color=fff" alt="صورة المستخدم"
+                    class="user-avatar">
+                <span>المدير</span>
+                <i class="fas fa-chevron-down"></i>
+            </button>
+        </div>
+    </div>
+</header>
+
 <section id="invoice-management" class="page-content">
-    <div class="invoice-header">
-        <div class="header-top">
-            <h1>إدارة الفواتير</h1>
-            <button class="btn-create">
-                <i class="fas fa-plus"></i>
+    <div class="container py-4">
+        <!-- Header -->
+        <div class="d-flex justify-content-between align-items-center mb-4">
+            <h1 class="h3 mb-0">إدارة الفواتير</h1>
+            <button>
+                <i class="fas fa-plus me-2"></i>
                 إنشاء فاتورة جديدة
             </button>
         </div>
-        <div class="search-filters">
-            <div class="search-box">
-                <i class="fas fa-search"></i>
-                <input type="text" placeholder="البحث عن الفواتير...">
+
+        <!-- Filters -->
+        <div class="row g-3 mb-4">
+            <div class="col-md-3">
+                <select class="form-select">
+                    <option>جميع الحالات</option>
+                    <option>مدفوع</option>
+                    <option>معلق</option>
+                    <option>ملغي</option>
+                </select>
             </div>
-            <select>
-                <option value="">جميع الحالات</option>
-                <option value="paid">مدفوع</option>
-                <option value="pending">معلق</option>
-                <option value="cancelled">ملغي</option>
-            </select>
+            <div class="col-md-9">
+                <div class="position-relative">
+                    <i class="fas fa-search search-icon"></i>
+                    <input type="text" class="form-control search-input" placeholder="البحث عن الفواتير...">
+                </div>
+            </div>
         </div>
-    </div>
 
-    <div class="invoices-table">
-        <table>
-            <thead>
-                <tr>
-                    <th>رقم الفاتورة</th>
-                    <th>الحالة</th>
-                    <th>التاريخ</th>
-                    <th>المبلغ</th>
-                    <th>الإجراءات</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>INV-001</td>
-                    <td><span class="status paid">مدفوع</span></td>
-                    <td>15-03-2024</td>
-                    <td>1,500 ريال</td>
-                    <td class="actions">
-                        <button class="btn-icon" title="عرض التفاصيل">
-                            <i class="fas fa-eye"></i>
-                        </button>
-                        <button class="btn-icon" title="إلغاء">
-                            <i class="fas fa-times"></i>
-                        </button>
-                    </td>
-                </tr>
-                <tr>
-                    <td>INV-002</td>
-                    <td><span class="status pending">معلق</span></td>
-                    <td>14-03-2024</td>
-                    <td>2,300 ريال</td>
-                    <td class="actions">
-                        <button class="btn-icon" title="عرض التفاصيل">
-                            <i class="fas fa-eye"></i>
-                        </button>
-                        <button class="btn-icon" title="إلغاء">
-                            <i class="fas fa-times"></i>
-                        </button>
-                    </td>
-                </tr>
-                <tr>
-                    <td>INV-003</td>
-                    <td><span class="status cancelled">ملغي</span></td>
-                    <td>13-03-2024</td>
-                    <td>800 ريال</td>
-                    <td class="actions">
-                        <button class="btn-icon" title="عرض التفاصيل">
-                            <i class="fas fa-eye"></i>
-                        </button>
-                        <button class="btn-icon" title="إلغاء">
-                            <i class="fas fa-times"></i>
-                        </button>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
+        <!-- Invoices Table -->
+        <div class="card shadow-sm">
+            <div class="card-body p-0">
+                <table class="table table-hover mb-0">
+                    <thead class="bg-light">
+                        <tr>
+                            <th>رقم الفاتورة</th>
+                            <th>المبلغ</th>
+                            <th>التاريخ</th>
+                            <th>الحالة</th>
+                            <th>الإجراءات</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>INV-001</td>
+                            <td>1,500 ريال</td>
+                            <td>15-03-2024</td>
+                            <td><span class="status-badge status-paid">مدفوع</span></td>
+                            <td>
+                                <button class="btn btn-sm btn-light me-2"><i class="fas fa-times"></i></button>
+                                <button class="btn btn-sm btn-light"><i class="fas fa-eye"></i></button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>INV-002</td>
+                            <td>2,300 ريال</td>
+                            <td>14-03-2024</td>
+                            <td><span class="status-badge status-pending">معلق</span></td>
+                            <td>
+                                <button class="btn btn-sm btn-light me-2"><i class="fas fa-times"></i></button>
+                                <button class="btn btn-sm btn-light"><i class="fas fa-eye"></i></button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>INV-003</td>
+                            <td>800 ريال</td>
+                            <td>13-03-2024</td>
+                            <td><span class="status-badge status-cancelled">ملغي</span></td>
+                            <td>
+                                <button class="btn btn-sm btn-light me-2"><i class="fas fa-times"></i></button>
+                                <button class="btn btn-sm btn-light"><i class="fas fa-eye"></i></button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
 
-    <div class="timeline">
-        <h2>السجل الزمني</h2>
-        <div class="timeline-items">
-            <div class="timeline-item">
-                <div class="time">15:30 - اليوم</div>
-                <div class="event">
-                    <i class="fas fa-check-circle"></i>
-                    تم دفع الفاتورة INV-001
-                </div>
-            </div>
-            <div class="timeline-item">
-                <div class="time">14:20 - اليوم</div>
-                <div class="event">
-                    <i class="fas fa-clock"></i>
-                    تم إنشاء فاتورة جديدة INV-002
-                </div>
-            </div>
-            <div class="timeline-item">
-                <div class="time">13:15 - اليوم</div>
-                <div class="event">
-                    <i class="fas fa-times-circle"></i>
-                    تم إلغاء الفاتورة INV-003
+        <!-- السجل الزمني -->
+        <div class="row mt-5">
+            <div class="col-md-12 ms-auto">
+                <div class="card shadow-sm">
+                    <div class="card-body">
+                        <h5 class="card-title mb-4">
+                            <i class="bi bi-clock-history me-2"></i>
+                            السجل الزمني
+                        </h5>
+                        <div class="timeline">
+                            <div class="timeline-item">
+                                <div class="timeline-marker bg-success"></div>
+                                <div class="timeline-content">
+                                    <div class="d-flex justify-content-between align-items-center mb-1">
+                                        <h6 class="mb-0 fw-bold">تم دفع الفاتورة</h6>
+                                        <small class="text-muted">منذ 5 دقائق</small>
+                                    </div>
+                                    <p class="text-muted mb-0">تم دفع الفاتورة رقم INV-001 بنجاح</p>
+                                </div>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="timeline-marker bg-warning"></div>
+                                <div class="timeline-content">
+                                    <div class="d-flex justify-content-between align-items-center mb-1">
+                                        <h6 class="mb-0 fw-bold">فاتورة جديدة</h6>
+                                        <small class="text-muted">منذ ساعة</small>
+                                    </div>
+                                    <p class="text-muted mb-0">تم إنشاء فاتورة جديدة برقم INV-002</p>
+                                </div>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="timeline-marker bg-danger"></div>
+                                <div class="timeline-content">
+                                    <div class="d-flex justify-content-between align-items-center mb-1">
+                                        <h6 class="mb-0 fw-bold">إلغاء فاتورة</h6>
+                                        <small class="text-muted">منذ 3 ساعات</small>
+                                    </div>
+                                    <p class="text-muted mb-0">تم إلغاء الفاتورة رقم INV-003</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

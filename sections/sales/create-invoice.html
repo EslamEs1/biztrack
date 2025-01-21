@@ -157,118 +157,111 @@
         <!-- Notes Section -->
         <div class="card shadow-sm mt-4">
             <div class="card-body">
-                <ul class="nav nav-tabs" id="myTab" role="tablist">
+                <ul class="nav nav-tabs" id="shippingTabs" role="tablist">
                     <li class="nav-item" role="presentation">
-                        <button class="nav-link active" id="discount-tab" data-bs-toggle="tab"
-                            data-bs-target="#discount" type="button" role="tab" aria-controls="discount"
-                            aria-selected="true">
+                        <button class="nav-link active" id="discount-tab" data-bs-toggle="tab" data-bs-target="#discount" type="button" role="tab">
                             الخصم والتسوية
                         </button>
                     </li>
                     <li class="nav-item" role="presentation">
-                        <button class="nav-link" id="deposit-tab" data-bs-toggle="tab" data-bs-target="#deposit"
-                            type="button" role="tab" aria-controls="deposit" aria-selected="false">
+                        <button class="nav-link" id="deposit-tab" data-bs-toggle="tab" data-bs-target="#deposit" type="button" role="tab">
                             إيداع
                         </button>
                     </li>
                     <li class="nav-item" role="presentation">
-                        <button class="nav-link" id="shipping-tab" data-bs-toggle="tab" data-bs-target="#shipping"
-                            type="button" role="tab" aria-controls="shipping" aria-selected="false">
+                        <button class="nav-link" id="shipping-tab" data-bs-toggle="tab" data-bs-target="#shipping" type="button" role="tab">
                             بيانات الشحن
                         </button>
                     </li>
                     <li class="nav-item" role="presentation">
-                        <button class="nav-link" id="documents-tab" data-bs-toggle="tab" data-bs-target="#documents"
-                            type="button" role="tab" aria-controls="documents" aria-selected="false">
-                            إرفاق المستندات
+                        <button class="nav-link" id="docs-tab" data-bs-toggle="tab" data-bs-target="#docs" type="button" role="tab">
+                            إرفاق المستندات ؟
                         </button>
                     </li>
                 </ul>
 
-                <div class="tab-content mt-4" id="myTabContent">
-                    <!-- Tab 1: الخصم والتسوية -->
-                    <div class="tab-pane fade show active" id="discount" role="tabpanel" aria-labelledby="discount-tab">
-                        <div class="card shadow-sm">
-                            <div class="card-body">
-                                <h5 class="card-title">الخصم والتسوية</h5>
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <label>الخصم</label>
-                                        <input type="text" class="form-control">
-                                    </div>
-                                    <div class="col-md-6">
-                                        <label>النسبة (%)</label>
-                                        <input type="number" class="form-control">
-                                    </div>
+                <div class="tab-content mt-3" id="shippingTabsContent">
+                    <div class="tab-pane fade " id="docs" role="tabpanel">
+                        <div class="border rounded p-4 bg-light position-relative mb-3">
+                            <div class="text-center">
+                                <div class="mb-2">
+                                    <i class="bi bi-cloud-upload text-primary" style="font-size: 2rem;"></i>
                                 </div>
+                                <div class="text-primary">
+                                    <i class="fa-duotone fa-regular fa-cloud-arrow-up"></i>
+                                    افلت الملف هنا او اختر من جهازك
+                                </div>
+                            </div>
+                            <input type="file" class="position-absolute top-0 start-0 w-100 h-100 opacity-0" style="cursor: pointer;">
+                        </div>
+                    </div>
+
+                    <div class="tab-pane fade" id="shipping" role="tabpanel">
+                        <div class="row mb-3">
+                            <div class="col-md-6">
+                                <label class="form-label">بيانات الشحن ؟</label>
+                                <select class="form-select">
+                                    <option selected>اظهر عنوان العميل</option>
+                                </select>
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label">مصاريف الشحن</label>
+                                <input type="text" class="form-control" />
+                            </div>
+                        
+                        </div>
+                    </div>
+
+                    <div class="tab-pane fade" id="deposit" role="tabpanel">
+                        <div class="row">
+                            <label class="form-label">الدفعة المقدمة ؟</label>
+
+                            <div class="col-md-6">
+                                <div class="input-group">
+                                    <input type="number" class="form-control text-start" value="0">
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <select class="form-select">
+                                    <option selected>المبلغ</option>
+                                    <option selected>نسبة مئوية</option>
+                                </select>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Tab 2: إيداع -->
-                    <div class="tab-pane fade" id="deposit" role="tabpanel" aria-labelledby="deposit-tab">
-                        <div class="card shadow-sm">
-                            <div class="card-body">
-                                <h5 class="card-title">إيداع</h5>
+                    <div class="tab-pane fade show active" id="discount" role="tabpanel">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label class="form-label">الخصم</label>
                                 <div class="row">
                                     <div class="col-md-6">
-                                        <label>الدفعة المقدمة (مدفوع بالفعل)</label>
-                                        <input type="number" class="form-control" value="0">
+                                        <input type="number" class="form-control text-start" value="0">
                                     </div>
                                     <div class="col-md-6">
-                                        <label>المبلغ</label>
-                                        <input type="number" class="form-control">
+                                        <select class="form-select">
+                                            <option selected>نسبة مئوية (%)</option>
+                                        </select>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                    </div>
 
-                    <!-- Tab 3: بيانات الشحن -->
-                    <div class="tab-pane fade" id="shipping" role="tabpanel" aria-labelledby="shipping-tab">
-                        <div class="card shadow-sm">
-                            <div class="card-body">
-                                <h5 class="card-title">بيانات الشحن</h5>
+                            <div class="col-md-6">
                                 <div class="row">
+                                    <label class="form-label">التسوية ؟</label>
                                     <div class="col-md-6">
-                                        <label>بيانات الشحن</label>
-                                        <input type="text" class="form-control" value="آلي">
+                                        <input type="text" class="form-control text-start">
                                     </div>
                                     <div class="col-md-6">
-                                        <label>مصاريف الشحن</label>
-                                        <input type="number" class="form-control">
+                                        <input type="number" class="form-control text-start" value="0">
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                    </div>
-
-                    <!-- Tab 4: إرفاق المستندات -->
-                    <div class="tab-pane fade" id="documents" role="tabpanel" aria-labelledby="documents-tab">
-                        <div class="card shadow-sm">
-                            <div class="card-body">
-                                <h5 class="card-title">إرفاق المستندات</h5>
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <label>مستند جديد</label>
-                                        <input type="file" class="form-control">
-                                    </div>
-                                    <div class="col-md-12 mt-3">
-                                        <label>الملفات التي تم رفعها مسبقاً</label>
-                                        <textarea class="form-control" rows="3" placeholder="المرفقات"></textarea>
-                                    </div>
-                                    <div class="col-md-12 mt-3">
-                                        <label>افلت الملف هنا أو اختر من جهازك</label>
-                                        <div class="border p-3 text-center" style="border: 2px dashed #ddd;">
-                                            افلت الملف هنا أو اختر من جهازك
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                        
                         </div>
                     </div>
                 </div>
-
             </div>
         </div>
 
@@ -276,11 +269,9 @@
             <div class="card-body">
                 <h5 class="card-title mb-3">الملاحظات / الشروط</h5>
                 <!-- Summernote Editor -->
-                <div id="summernote">Hello Summernote</div>
+                <textarea name="" id=""></textarea>
             </div>
         </div>
-
-
     </div>
 
 </section>

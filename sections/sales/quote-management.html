@@ -44,23 +44,23 @@
     </div>
 </header>
 
-<section id="invoice-management" class="page-content">
+<section id="quote-management" class="page-content">
     <div class="container py-4">
         <!-- Page Header -->
             <div class="page-header">
                 <div>
-                    <h1>الفواتير</h1>
+                    <h1>عروض الأسعار</h1>
                     <nav aria-label="breadcrumb">
                         <ol class="breadcrumb">
                             <li class="breadcrumb-item"><a href="#">الرئيسية</a></li>
-                            <li class="breadcrumb-item active">الفواتير</li>
+                            <li class="breadcrumb-item active">عروض الأسعار</li>
                         </ol>
                     </nav>
                 </div>
                 <div>
                     <button class="btn btn-primary">
                         <i class="bi bi-plus-lg"></i>
-                        إنشاء فاتورة جديدة
+                        إنشاء عرض سعر جديد
                     </button>
                 </div>
             </div>
@@ -70,33 +70,33 @@
                 <div class="col-md-6 col-lg-3">
                     <div class="stat-card">
                         <div class="stat-card-info">
-                            <h6>إجمالي الفواتير</h6>
-                            <h3>2,547</h3>
-                            <p class="text-success"><i class="bi bi-arrow-up"></i> 15.3% منذ الشهر الماضي</p>
+                            <h6>إجمالي عروض الأسعار</h6>
+                            <h3>1,286</h3>
+                            <p class="text-success"><i class="bi bi-arrow-up"></i> 12.5% منذ الشهر الماضي</p>
                         </div>
                         <div class="stat-card-icon">
-                            <i class="bi bi-receipt"></i>
+                            <i class="bi bi-file-earmark-text"></i>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-3">
                     <div class="stat-card">
                         <div class="stat-card-info">
-                            <h6>غير مدفوعة</h6>
-                            <h3>128</h3>
-                            <p class="text-warning"><i class="bi bi-clock"></i> بحاجة للمتابعة</p>
+                            <h6>قيد الانتظار</h6>
+                            <h3>42</h3>
+                            <p class="text-warning"><i class="bi bi-clock"></i> بحاجة للمراجعة</p>
                         </div>
                         <div class="stat-card-icon yellow">
-                            <i class="bi bi-exclamation-circle"></i>
+                            <i class="bi bi-hourglass-split"></i>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-3">
                     <div class="stat-card">
                         <div class="stat-card-info">
-                            <h6>مدفوعة</h6>
-                            <h3>1,893</h3>
-                            <p class="text-success"><i class="bi bi-arrow-up"></i> 12.4% منذ الشهر الماضي</p>
+                            <h6>تمت الموافقة</h6>
+                            <h3>968</h3>
+                            <p class="text-success"><i class="bi bi-arrow-up"></i> 8.2% منذ الشهر الماضي</p>
                         </div>
                         <div class="stat-card-icon green">
                             <i class="bi bi-check-circle"></i>
@@ -106,12 +106,12 @@
                 <div class="col-md-6 col-lg-3">
                     <div class="stat-card">
                         <div class="stat-card-info">
-                            <h6>متأخرة السداد</h6>
-                            <h3>526</h3>
-                            <p class="text-danger"><i class="bi bi-arrow-up"></i> 5.2% منذ الشهر الماضي</p>
+                            <h6>مرفوضة</h6>
+                            <h3>276</h3>
+                            <p class="text-danger"><i class="bi bi-arrow-down"></i> 3.1% منذ الشهر الماضي</p>
                         </div>
                         <div class="stat-card-icon red">
-                            <i class="bi bi-clock-history"></i>
+                            <i class="bi bi-x-circle"></i>
                         </div>
                     </div>
                 </div>
@@ -124,15 +124,15 @@
                         <div class="col-md-6 col-lg-3">
                             <div class="search-box">
                                 <i class="bi bi-search"></i>
-                                <input type="text" class="form-control" placeholder="بحث عن فاتورة...">
+                                <input type="text" class="form-control" placeholder="بحث عن عرض سعر...">
                             </div>
                         </div>
                         <div class="col-md-6 col-lg-3">
                             <select class="form-select">
-                                <option value="">حالة الدفع</option>
-                                <option value="paid">مدفوعة</option>
-                                <option value="unpaid">غير مدفوعة</option>
-                                <option value="overdue">متأخرة السداد</option>
+                                <option value="">جميع الحالات</option>
+                                <option value="pending">قيد الانتظار</option>
+                                <option value="approved">تمت الموافقة</option>
+                                <option value="rejected">مرفوض</option>
                             </select>
                         </div>
                         <div class="col-md-6 col-lg-3">
@@ -158,20 +158,19 @@
                         <table class="table table-hover">
                             <thead>
                                 <tr>
-                                    <th>رقم الفاتورة</th>
+                                    <th>رقم عرض السعر</th>
                                     <th>العميل</th>
-                                    <th>تاريخ الإصدار</th>
-                                    <th>تاريخ الاستحقاق</th>
+                                    <th>التاريخ</th>
                                     <th>المبلغ الإجمالي</th>
-                                    <th>حالة الدفع</th>
-                                    <th>طريقة الدفع</th>
+                                    <th>الحالة</th>
+                                    <th>تاريخ الإنشاء</th>
                                     <th>الإجراءات</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr>
                                     <td>
-                                        <a href="#" class="quotation-link">INV-000001</a>
+                                        <a href="#" class="quotation-link">QT-000001</a>
                                     </td>
                                     <td>
                                         <div class="d-flex align-items-center">
@@ -183,32 +182,31 @@
                                         </div>
                                     </td>
                                     <td>2024-01-20</td>
-                                    <td>2024-02-20</td>
                                     <td>
-                                        <span class="amount">25,000</span>
+                                        <span class="amount">15,000</span>
                                         <small class="text-muted">ج.م</small>
                                     </td>
                                     <td>
-                                        <span class="status-badge approved">مدفوعة</span>
+                                        <span class="status-badge pending">قيد الانتظار</span>
                                     </td>
-                                    <td>تحويل بنكي</td>
+                                    <td>2024-01-15</td>
                                     <td>
                                         <div class="action-buttons">
+                                            <button class="btn btn-icon" title="تعديل">
+                                                <i class="bi bi-pencil"></i>
+                                            </button>
                                             <button class="btn btn-icon" title="طباعة">
                                                 <i class="bi bi-printer"></i>
                                             </button>
-                                            <button class="btn btn-icon" title="تحميل PDF">
-                                                <i class="bi bi-download"></i>
-                                            </button>
-                                            <button class="btn btn-icon" title="إرسال بالبريد">
-                                                <i class="bi bi-envelope"></i>
+                                            <button class="btn btn-icon" title="حذف">
+                                                <i class="bi bi-trash"></i>
                                             </button>
                                         </div>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td>
-                                        <a href="#" class="quotation-link">INV-000002</a>
+                                        <a href="#" class="quotation-link">QT-000002</a>
                                     </td>
                                     <td>
                                         <div class="d-flex align-items-center">
@@ -220,32 +218,31 @@
                                         </div>
                                     </td>
                                     <td>2024-01-18</td>
-                                    <td>2024-02-18</td>
                                     <td>
-                                        <span class="amount">18,500</span>
+                                        <span class="amount">8,500</span>
                                         <small class="text-muted">ج.م</small>
                                     </td>
                                     <td>
-                                        <span class="status-badge pending">غير مدفوعة</span>
+                                        <span class="status-badge approved">تمت الموافقة</span>
                                     </td>
-                                    <td>-</td>
+                                    <td>2024-01-16</td>
                                     <td>
                                         <div class="action-buttons">
+                                            <button class="btn btn-icon" title="تعديل">
+                                                <i class="bi bi-pencil"></i>
+                                            </button>
                                             <button class="btn btn-icon" title="طباعة">
                                                 <i class="bi bi-printer"></i>
                                             </button>
-                                            <button class="btn btn-icon" title="تحميل PDF">
-                                                <i class="bi bi-download"></i>
-                                            </button>
-                                            <button class="btn btn-icon" title="إرسال بالبريد">
-                                                <i class="bi bi-envelope"></i>
+                                            <button class="btn btn-icon" title="حذف">
+                                                <i class="bi bi-trash"></i>
                                             </button>
                                         </div>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td>
-                                        <a href="#" class="quotation-link">INV-000003</a>
+                                        <a href="#" class="quotation-link">QT-000003</a>
                                     </td>
                                     <td>
                                         <div class="d-flex align-items-center">
@@ -256,26 +253,25 @@
                                             </div>
                                         </div>
                                     </td>
-                                    <td>2024-01-15</td>
-                                    <td>2024-02-15</td>
+                                    <td>2024-01-17</td>
                                     <td>
-                                        <span class="amount">32,750</span>
+                                        <span class="amount">12,750</span>
                                         <small class="text-muted">ج.م</small>
                                     </td>
                                     <td>
-                                        <span class="status-badge rejected">متأخرة السداد</span>
+                                        <span class="status-badge rejected">مرفوض</span>
                                     </td>
-                                    <td>-</td>
+                                    <td>2024-01-14</td>
                                     <td>
                                         <div class="action-buttons">
+                                            <button class="btn btn-icon" title="تعديل">
+                                                <i class="bi bi-pencil"></i>
+                                            </button>
                                             <button class="btn btn-icon" title="طباعة">
                                                 <i class="bi bi-printer"></i>
                                             </button>
-                                            <button class="btn btn-icon" title="تحميل PDF">
-                                                <i class="bi bi-download"></i>
-                                            </button>
-                                            <button class="btn btn-icon" title="إرسال بالبريد">
-                                                <i class="bi bi-envelope"></i>
+                                            <button class="btn btn-icon" title="حذف">
+                                                <i class="bi bi-trash"></i>
                                             </button>
                                         </div>
                                     </td>
@@ -287,7 +283,7 @@
                     <!-- Pagination -->
                     <div class="d-flex justify-content-between align-items-center mt-4">
                         <div class="text-muted">
-                            إظهار 1 إلى 3 من 42 فاتورة
+                            إظهار 1 إلى 3 من 24 عرض سعر
                         </div>
                         <ul class="pagination mb-0">
                             <li class="page-item disabled">
